@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+
+    <!-- Background gradient: deep dark with subtle warm tint -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#13141a"/>
+      <stop offset="100%" stop-color="#0b0c10"/>
+    </linearGradient>
+
+    <!-- Gold accent gradient -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#e8c97a"/>
+      <stop offset="50%"  stop-color="#f5dfa0"/>
+      <stop offset="100%" stop-color="#c9a84c"/>
+    </linearGradient>
+
+    <!-- Gold shimmer for stroke -->
+    <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#f0d896"/>
+      <stop offset="100%" stop-color="#b8922e"/>
+    </linearGradient>
+
+    <!-- Subtle inner glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%"   stop-color="#d4a853" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#d4a853" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Glow filter for gold elements -->
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip to rounded square -->
+    <clipPath id="roundedClip">
+      <rect width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#bg)"/>
+
+  <!-- Subtle center glow -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#centerGlow)"/>
+
+  <!-- ── Outer decorative frame ── -->
+  <!-- Corner marks — top left -->
+  <line x1="72"  y1="100" x2="72"  y2="72"  stroke="url(#goldStroke)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="72"  y1="72"  x2="100" y2="72"  stroke="url(#goldStroke)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <!-- Corner marks — top right -->
+  <line x1="440" y1="100" x2="440" y2="72"  stroke="url(#goldStroke)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="440" y1="72"  x2="412" y2="72"  stroke="url(#goldStroke)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <!-- Corner marks — bottom left -->
+  <line x1="72"  y1="412" x2="72"  y2="440" stroke="url(#goldStroke)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="72"  y1="440" x2="100" y2="440" stroke="url(#goldStroke)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <!-- Corner marks — bottom right -->
+  <line x1="440" y1="412" x2="440" y2="440" stroke="url(#goldStroke)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="440" y1="440" x2="412" y2="440" stroke="url(#goldStroke)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- ── Central octagonal medallion ── -->
+  <!-- Outer octagon (subtle dark ring) -->
+  <polygon
+    points="256,108 338,130 394,192 394,276 338,382 256,404 174,382 118,276 118,192 174,130"
+    fill="none"
+    stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.06"
+  />
+
+  <!-- Main medallion ring -->
+  <polygon
+    points="256,118 332,139 385,198 385,270 332,374 256,395 180,374 127,270 127,198 180,139"
+    fill="none"
+    stroke="url(#goldStroke)" stroke-width="1.5" stroke-opacity="0.55"
+    filter="url(#goldGlow)"
+  />
+
+  <!-- Inner medallion fill -->
+  <polygon
+    points="256,130 324,149 373,204 373,264 324,366 256,385 188,366 139,264 139,204 188,149"
+    fill="#0f1016"
+    stroke="url(#goldStroke)" stroke-width="1" stroke-opacity="0.3"
+  />
+
+  <!-- ── Thin horizontal rule above/below monogram ── -->
+  <line x1="178" y1="218" x2="334" y2="218" stroke="url(#gold)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="178" y1="294" x2="334" y2="294" stroke="url(#gold)" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- ── Monogram "HB" ── -->
+  <!-- H -->
+  <g fill="url(#gold)" filter="url(#goldGlow)">
+    <!-- H left stem -->
+    <rect x="148" y="228" width="18" height="56" rx="2"/>
+    <!-- H right stem -->
+    <rect x="210" y="228" width="18" height="56" rx="2"/>
+    <!-- H crossbar -->
+    <rect x="148" y="252" width="80" height="10" rx="2"/>
+  </g>
+
+  <!-- B -->
+  <g fill="url(#gold)" filter="url(#goldGlow)">
+    <!-- B left stem -->
+    <rect x="247" y="228" width="18" height="56" rx="2"/>
+    <!-- B top bump -->
+    <path d="M265,228 Q310,228 310,250 Q310,270 265,270 Z" rx="2"/>
+    <!-- B bottom bump -->
+    <path d="M265,270 Q318,270 318,292 Q318,284 265,284 Z" rx="2"/>
+    <!-- Close B bottom -->
+    <rect x="265" y="270" width="1" height="14"/>
+    <!-- Redraw B bumps cleanly -->
+  </g>
+
+  <!-- Cleaner B redraw -->
+  <g filter="url(#goldGlow)">
+    <rect x="247" y="228" width="17" height="56" rx="2" fill="url(#gold)"/>
+    <!-- B top lobe -->
+    <path d="M264,228 h28 a20,20 0 0 1 0,40 h-28 z" fill="url(#gold)"/>
+    <!-- B bottom lobe -->
+    <path d="M264,268 h32 a18,18 0 0 1 0,36 h-32 z" fill="url(#gold)"/>
+  </g>
+
+  <!-- ── Small diamond ornament — top & bottom ── -->
+  <polygon points="256,108 263,118 256,128 249,118" fill="url(#gold)" opacity="0.8"/>
+  <polygon points="256,384 263,394 256,404 249,394" fill="url(#gold)" opacity="0.8"/>
+
+  <!-- ── Micro dot accents at mid-sides ── -->
+  <circle cx="118" cy="256" r="4" fill="url(#gold)" opacity="0.6"/>
+  <circle cx="394" cy="256" r="4" fill="url(#gold)" opacity="0.6"/>
+
+  <!-- ── Bottom caption ── -->
+  <text
+    x="256" y="455"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="22"
+    font-weight="400"
+    letter-spacing="8"
+    text-anchor="middle"
+    fill="url(#gold)"
+    opacity="0.65"
+  >BUDGET</text>
+
+</svg>
